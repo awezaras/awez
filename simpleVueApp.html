@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <ul>
+            <li v-for="(ingredient, i) in ingredients"> {{ingredient}} ({{ i +1 }}) </li>
+        </ul>
+
+        <hr>
+        <template v-for="(ingredient, index) in ingredients">
+            <h1>
+                {{ingredient}} <span> {{index + 1}}</span>
+            </h1>
+        </template>
+        <hr>
+        <ul>
+            <li v-for="person  in persons">
+                <span v-for="value in person">
+                    {{value}}
+                </span>
+            </li>
+        </ul>
+
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            ingredients: ['meat', 'fruit', 'cookie'],
+            persons: [{
+                    name: 'alex',
+                    age: 18,
+                    color: 'black'
+                },
+                {
+                    name: 'rawand',
+                    age: 21,
+                    color: 'brown'
+                }
+            ]
+        },
+    });
+</script>
+
+
+<style>
+    .box {
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        background-color: gray;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    span {
+        color: teal;
+    }
+</style>
+
+</html>
